@@ -16,9 +16,10 @@ app.use(cookieParser());
 // view engine
 app.set('view engine', 'ejs');
 
+var port = process.env.PORT || 3000;
 const dbURI = "mongodb+srv://naman:8510887827@cluster0.maucb.mongodb.net/node-auth";
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex:true })
-  .then((result) => app.listen(3000))
+  .then((result) => app.listen(port))
   .catch((err) => console.log(err));
 
 //app.listen(3000);
